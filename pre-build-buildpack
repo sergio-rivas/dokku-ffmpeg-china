@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -o pipefail
+set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 shopt -s expand_aliases
 declare -ig __oo__insideTryCatch=0
 
@@ -60,7 +60,7 @@ Exception.GetLastException() {
 
 
 
-set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+
 APP="$1"; IMAGE="dokku/$APP"
 echo "-----> Installing ffmpeg ..."
 COMMAND=$(cat <<EOF
