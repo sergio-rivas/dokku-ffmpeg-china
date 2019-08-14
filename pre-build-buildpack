@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 APP="$1"; IMAGE="dokku/$APP"
+
+eval "$(config_export app "$APP")"
+local ffmpeg="$FFMPEG_REQUIRED"
+
+
+if [ "$ffmpeg" == "true"]; then
 echo "-----> Installing ffmpeg ..."
 COMMAND=$(cat <<EOF
 echo "-----> install requirements"
@@ -13,10 +19,10 @@ apt-get install -y software-properties-common
 apt-get install -y --reinstall ca-certificates
 apt-get install -y ffmpeg
 sleep 1 # wait so that docker run has not exited before docker attach
-EOF
-)
+EOF)
 id=$(docker run -d $IMAGE /bin/bash -e -c "$COMMAND")
 #enable logs
 docker attach $id
 test $(docker wait $id) -eq 0
 docker commit $id $IMAGE > /dev/null
+fi
