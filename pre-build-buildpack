@@ -6,25 +6,12 @@ COMMAND=$(cat <<EOF
 echo "-----> install requirements"
 
 export DEBIAN_FRONTEND=noninteractive
+# Replace default sources for Aliyun China Mirrored Sources
 curl https://tuitu-buildpack.oss-cn-hangzhou.aliyuncs.com/sources.list -o /etc/apt/sources.list
-
 apt-get -y update
 apt-get install -y software-properties-common
 apt-get install -y --reinstall ca-certificates
 apt-get install -y ffmpeg
-# add-apt-repository -y ppa:kirillshkrogalev/ffmpeg-next
-# sh -c '
-#   set +e
-#   bash -e <<TRY
-#     apt-get -y update
-#     apt-get install -y ffmpeg
-#   TRY
-#   if [ $? -ne 0 ]; then
-    
-#   fi
-# '
-
-
 sleep 1 # wait so that docker run has not exited before docker attach
 EOF
 )
