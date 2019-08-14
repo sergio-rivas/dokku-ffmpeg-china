@@ -25,7 +25,7 @@ dokku ffmpeg-china:uninstall <app_name> # Removes FFMPEG requirement for next de
 
 The MIT License (MIT)
 
-Copyright (c) 2019 backstitch
+Copyright (c) 2019 backstitch, sergio-rivas, and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
