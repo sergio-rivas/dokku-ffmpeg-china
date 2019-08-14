@@ -1,7 +1,8 @@
-# dokku-ffmpeg
+# dokku-ffmpeg-china
 
-dokku-weasyprint is an awesome plugin for [dokku][dokku] that properly installs the weasyprint into the docker instance.
-This plugin should fix the problems you may have when downloading weasyprint with ```apt-get``` for example by using another awesome plugin [dokku-apt][dokku-apt].
+**NOTE: This Dokku Plugin is only relavent for CHINA users**
+dokku-ffmpeg-china is an awesome plugin for [dokku][dokku] that properly installs the FFMPEG into the docker instance.
+This plugin should fix the problems you may have when downloading ffmpeg with ```apt-get``` due to server hosting in China.
 
 ## Installation
 
