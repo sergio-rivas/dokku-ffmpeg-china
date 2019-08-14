@@ -5,4 +5,4 @@ source "$PLUGIN_AVAILABLE_PATH/config/functions"
 
 APP="$2"
 
-config_set "$APP" "FFMPEG_REQUIRED=true"
+config_set --no-restart "$APP" "FFMPEG_REQUIRED=true"
