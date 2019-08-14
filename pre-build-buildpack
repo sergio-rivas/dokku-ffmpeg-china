@@ -8,7 +8,7 @@ eval "$(config_export app "$APP")"
 ffmpeg="$FFMPEG_REQUIRED"
 
 
-if [ "$ffmpeg" == "true"]; then
+if [[ "$ffmpeg" == "true" ]] ; then
 echo "-----> Installing ffmpeg ..."
 COMMAND=$(cat <<EOF
 echo "-----> install requirements"
