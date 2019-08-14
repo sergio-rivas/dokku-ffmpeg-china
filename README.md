@@ -14,7 +14,12 @@ git clone https://github.com/sergio-rivas/dokku-ffmpeg-china /var/lib/dokku/plug
 dokku plugin:install https://github.com/sergio-rivas/dokku-ffmpeg-china.git ffmpeg
 ```
 
-All future deployments will have dokku-ffmpeg installed.
+The following commands now exist:
+
+```
+dokku ffmpeg-china:install <app_name> # Sets up FFMPEG requirement for next deployment
+dokku ffmpeg-china:uninstall <app_name> # Removes FFMPEG requirement for next deployment
+```
 
 ## License
 
